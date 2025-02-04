@@ -5,6 +5,8 @@ const apiRoutes = require('./routes');
 const app = express();
 // Router :- It is a class in express that helps us to create route handlers. Can also create modules for your routes.
 //app.use() -> creates a router as a module, loads a middleware function in it, defines some routes, and mounts the router module on a path in the main app.
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', apiRoutes);
 
